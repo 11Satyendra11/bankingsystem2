@@ -1,6 +1,8 @@
 # bankingsystem2
-java swing banking system
+#H1 java swing banking system
 
+
+#H1 How to setup 
 just pull the project and rs2xml.jar which is present in lib folder to your classpath.
 maven build and run the application with
 There is nothing else setup we need to do.
