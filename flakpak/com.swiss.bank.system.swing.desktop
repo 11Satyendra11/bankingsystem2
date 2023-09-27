@@ -1,0 +1,14 @@
+[Desktop Entry]
+Type=Application
+Name=swissbanksystemswing
+Comment=Applepy comment
+Comment[en_US]=Applepy comment
+GenericName=Applepy generic
+GenericName[en_US]=Applepy generic
+Icon=com.swiss.bank.system.swing
+Exec=swissbanksystemswing
+Terminal=false
+Actions=AboutDialog;PickFirst;
+Keywords=applepy;color;
+Categories=GTK;Graphics;
+

@@ -1,0 +1,40 @@
+app-id: ccom.swiss.bank.system.swing.yml
+runtime: org.freedesktop.Platform
+runtime-version: '22.08'
+sdk: org.freedesktop.Sdk
+command: swissbanksystemswing
+sdk-extensions:
+  - org.freedesktop.Sdk.Extension.openjdk11
+finish-args:
+  - --socket=x11
+  - --share=ipc
+  - --device=dri
+  - --share=network
+  - --socket=pulseaudio
+  - --filesystem=host:rw
+modules:
+  - name: openjdk
+    buildsystem: simple
+    build-commands:
+      - /usr/lib/sdk/openjdk11/install.sh
+  - name: swissbanksystemswing
+    buildsystem: simple
+    build-commands:
+      - cp swissbanksystemswing.jar ${FLATPAK_DEST}
+      - install -D -m0755 swissbanksystemswing.sh ${FLATPAK_DEST}/bin/swissbanksystemswing
+      - install -Dm644 com.swiss.bank.system.swing.desktop -t $FLATPAK_DEST/share/applications
+    sources:
+      - type: file
+        path: com.swiss.bank.system.swing.desktop
+      - type: file
+        path: com.swiss.bank.system.swing.png
+      - type: file
+        path: com.swiss.bank.system.swing.yml
+      - type: file
+        path: sample.db
+      - type: file
+        path: swissbanksystemswing.jar
+      - type: file
+        path: swissbanksystemswing.sh
+      - type: file
+        path: lib/rs2xml.jar

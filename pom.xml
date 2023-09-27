@@ -3,6 +3,7 @@
   <groupId>bankingsystemswing</groupId>
   <artifactId>bankingsystemswing</artifactId>
   <version>0.0.1-SNAPSHOT</version>
+  <packaging>jar</packaging>
   <name>BankingSystemSwing</name>
   <description>Banking System using swing </description>
   <build>
@@ -51,6 +52,42 @@
           <mainClass>bankingsystemswing.Login</mainClass>
         </configuration>
       </plugin>
+      
+      
+      
+      
+      <!-- Maven Shade Plugin -->
+		<plugin>
+		  <groupId>org.apache.maven.plugins</groupId>
+		  <artifactId>maven-shade-plugin</artifactId>
+		  <version>2.3</version>
+		  <executions>
+		     <!-- Run shade goal on package phase -->
+		    <execution>
+			<phase>package</phase>
+			<goals>
+				<goal>shade</goal>
+			</goals>
+			<configuration>
+			  <transformers>
+				<!-- add Main-Class to manifest file -->
+                                <transformer implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
+					<mainClass>bankingsystemswing.Login</mainClass>
+				</transformer>
+			  </transformers>
+			</configuration>
+		      </execution>
+		  </executions>
+		</plugin>
+      
+      
+      
+      
+      
+      
+      
+      
+      
       
       
       
